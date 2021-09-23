@@ -8,10 +8,7 @@ st.sidebar.write('How many articles would you like to see?')
 # Add a slider to the sidebar:
 add_slider = st.sidebar.slider(
     'Select a range of values',
-
-  
     1, 4,step=1,value = 4
-
 )
 
 st.sidebar.write('Sorted By')
@@ -41,7 +38,11 @@ df = df.sort_values(sort_column, axis=0)
 
 checkbox_list = [True, add_checkbox1, add_checkbox2, add_checkbox3, add_checkbox4, add_checkbox5, add_checkbox6]
 
-st.dataframe(df.loc[:add_slider-1,checkbox_list])
+df=df.iloc[:add_slider]
+df=df.loc[:,checkbox_list].copy()
+st.dataframe(df)
+
+# st.dataframe(df.loc[:add_slider-1,checkbox_list].copy()             )
 
 
 
