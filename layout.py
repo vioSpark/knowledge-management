@@ -10,7 +10,7 @@ add_slider = st.sidebar.slider(
     'Select a range of values',
 
   
-    1, 3,step=1,value = 3
+    1, 4,step=1,value = 4
 
 )
 
@@ -39,8 +39,9 @@ df = pd.DataFrame(np.array([['ans1', 'Main Arguments1', 3, 'Author1', 'URL1', 'K
 
 df = df.sort_values(sort_column, axis=0)
 
+checkbox_list = [True, add_checkbox1, add_checkbox2, add_checkbox3, add_checkbox4, add_checkbox5, add_checkbox6]
 
 st.dataframe(df.loc[:add_slider-1,checkbox_list])
 
-checkbox_list = [True, add_checkbox1, add_checkbox2, add_checkbox3, add_checkbox4, add_checkbox5, add_checkbox6]
+
 
