@@ -8,14 +8,19 @@ st.sidebar.write('How many articles would you like to see?')
 # Add a slider to the sidebar:
 add_slider = st.sidebar.slider(
     'Select a range of values',
-    0, 20, step=1
+
+  
+    1, 3,step=1,value = 3
+
 )
 
 st.sidebar.write('Sorted By')
 
+
 sort_column = st.sidebar.radio(
     "",
     ('# Citations', 'Keywords', 'Date Published'))
+
 
 st.sidebar.write('Options')
 
@@ -34,6 +39,8 @@ df = pd.DataFrame(np.array([['ans1', 'Main Arguments1', 3, 'Author1', 'URL1', 'K
 
 df = df.sort_values(sort_column, axis=0)
 
+
+st.dataframe(df.loc[:add_slider-1,checkbox_list])
+
 checkbox_list = [True, add_checkbox1, add_checkbox2, add_checkbox3, add_checkbox4, add_checkbox5, add_checkbox6]
 
-st.dataframe(df.loc[:, checkbox_list])
