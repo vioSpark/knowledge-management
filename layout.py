@@ -51,6 +51,8 @@ df = pd.DataFrame(np.array([['30', 'Main Arguments1', 350, 'Pamela Richards, Deb
                   columns=['Answer', 'Main Arguments', '# Citations', 'Author', 'URL', 'Keywords', 'Date Published'])
 
 
+st.error("You're on the publicly accessible version")
+
 
 
 df['Date Published'] = pd.to_datetime(df['Date Published']).dt.date
